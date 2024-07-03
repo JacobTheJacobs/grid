@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/my-nextjs-app/' : '',
-    basePath: '/my-nextjs-app',
-    trailingSlash: true,
+  assetPrefix: isProd ? '/grid/' : '',
+  basePath: isProd ? '/grid' : '',
+  trailingSlash: true,
   };
   
 
