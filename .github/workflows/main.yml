@@ -24,7 +24,7 @@ jobs:
     - name: Build Next.js project
       run: npm run build
 
-    - name: Export static files
+    - name: Build and Export Next.js project
       run: npm run export
 
     - name: Deploy to GitHub Pages
