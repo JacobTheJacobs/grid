@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(57, 57, 57);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.layout {
+  background: rgb(57, 57, 57);
+}
+
+.layout > div {
+  background: white;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: move; /* Add a cursor to indicate draggable items */
+}
+
+.draggable-item {
+  position: relative;
+  z-index: 100;
+}
+
+.popup-menu {
+  position: fixed;
+  bottom: 60px; /* Adjust as needed */
+  left: 10px; /* Align with the button */
+  background: #1c1c1c; /* Light black background */
+  border: 1px solid #333; /* Darker border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+  padding: 10px;
+  z-index: 1000;
+  color: white; /* White text color */
+}
+
+.popup-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #000; /* Black background */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-menu button:last-child {
+  margin-bottom: 0;
+}
+
+.popup-menu button:hover {
+  background-color: #333; /* Light black background on hover */
+}
+
+.add-button {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px 18px;
+  background-color: #000; /* Black background */
+  color: #FFF; /* White text color */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #848484; /* Light black background on hover */
+}
+
+.grid-item {
+  position: relative;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #ff0000;
+}
+.react-grid-item.react-grid-placeholder {
+  pointer-events: none;
+  background-color: rgba(0, 0, 255, 0.2);
+  opacity: 0.5;
+  transition-duration: 100ms;
+  z-index: 2;
+  user-select: none;
+}
+.react-grid-item {
+  z-index: 3;
+}
